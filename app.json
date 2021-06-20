@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/elm/index",
+    "pages/eatwhat/index",
+    "pages/user/index",
+    "pages/user/order",
+    "pages/user/ranking",
+    "pages/user/fans",
+    "pages/user/info",
+    "pages/user/account",
+    "pages/user/cash",
+    "pages/meituan/index",
+    "pages/kefu/webview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+   "scope.userLocation": {
+     "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#cfcfcf",
+    "selectedColor": "#ff0c30",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "外卖红包",
+        "iconPath": "static/menu_imgs/wm.png",
+        "selectedIconPath": "static/menu_imgs/wm_selected.png"
+      },
+      {
+        "pagePath": "pages/meituan/index",
+        "text": "美团外卖",
+        "iconPath": "static/menu_imgs/mt.png",
+        "selectedIconPath": "static/menu_imgs/mt_selected.png"
+      },
+      {
+        "pagePath": "pages/eatwhat/index",
+        "text": "吃什么",
+        "iconPath": "static/menu_imgs/eat_what.png",
+        "selectedIconPath": "static/menu_imgs/eat_what_selected.png"
+      },
+      {
+        "pagePath": "pages/elm/index",
+        "text": "饿了么外卖",
+        "iconPath": "static/menu_imgs/ele.png",
+        "selectedIconPath": "static/menu_imgs/ele_selected.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "static/menu_imgs/mine.png",
+        "selectedIconPath": "static/menu_imgs/mine_selected.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [],
+  "sitemapLocation": "sitemap92.json"
+}

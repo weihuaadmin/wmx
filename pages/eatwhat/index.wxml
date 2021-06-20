@@ -1,0 +1,55 @@
+<view>
+  <view :class="status" id="bg"></view>
+  <view id="tempContainer">
+    <view v-for="(item, index) in tempFoods" key="index" animationend="handleAnimationEnd" class="tempItem"
+      data-id="item.id"
+      style="'top:' + item.top + ';left:' + item.left + ';font-size:' + item.fontSize + ';color:' + item.color">
+      {{item.food}}
+    </view>
+  </view>
+  <view id="outer">
+    <view id="inner" style="'margin-top:' + navbarHeight">
+      <view class="status + ' ' + (restaurants.length?'restaurants':'')" id="main">
+        <text class="tip">点击可以切换饭点~</text>
+        <view animation="titleAnimationData" bindtap="changeTime" class="title">今天<text
+            class="time">{{menu[menuIdx][0]}}</text>吃<text class="what">{{food}}</text>
+          <text class="punctuation">{{punctuation}}</text>
+        </view>
+        <view bindtap="play" id="startBtn">
+          <view class="inner">{{btnText}}</view>
+        </view>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="share">
+          <button id="shareApp" open-type="share">
+            <view class="inner">分享吃什么</view>
+          </button>
+          <button id="luckyMoney" bindtap="getLuckyMoney">
+            <view class="inner">去领红包</view>
+          </button>
+        </view>
+        <!-- #endif -->
+        <text bindtap="showRestaurant" id="showRestaurant">查看餐厅详情</text>
+      </view>
+      <view :class="status==='running'?'hide':''" id="footer">
+        <view id="toggle">
+          <text bindtap="changeType" :class="'option ' + (type==='human'?'selected':'')" data-type="human"
+            id="human">正常人类</text>
+          <text bindtap="changeType" :class="'option ' + (type==='monster'?'selected':'')" data-type="monster"
+            id="monster">非正常人类</text>
+          <view :class="'hb ' + type"></view>
+        </view>
+        <view bindtap="showLocationMenu" class="fab" id="getRestaurants" title="定位餐厅"></view>
+        <view bindtap="editMenu" class="fab" id="editMenu" title="菜单"></view>
+      </view>
+    </view>
+    <view class="safeAreaInsetBottom"></view>
+  </view>
+  <view id="menuModal" wx:if="{{showMenu}}">
+    <form bindsubmit="handleFormSubmit" style="'margin-top:' + navbarHeight">
+      <text class="title">~ 想吃什么 ~</text>
+      <textarea maxlength="1000" name="textarea" placeholder="在这里输入菜单,项目间以空格分隔,保存后会缓存到本地,再次打开会恢复初始值…"
+        value="{{menuValue}}"></textarea>
+      <button form-type="submit">保存，再次打开恢复默认</button>
+    </form>
+  </view>
+</view>

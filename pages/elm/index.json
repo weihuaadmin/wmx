@@ -1,0 +1,13 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#161921",
+    "backgroundColor": "#FFFFFF",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-header": "/graceUI/components/graceHeader",
+        "grace-nav-bar": "/graceUI/components/graceNavBar",
+        "grace-shade": "/graceUI/components/graceShade",
+        "grace-dialog": "/graceUI/components/graceDialog",
+        "grace-loading": "/graceUI/components/graceLoading"
+    }
+}
